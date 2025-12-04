@@ -15,18 +15,20 @@ export default function AdvertiserForm() {
 
   const [status, setStatus] = useState("");
 
+  // Input change handler
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus("Sending...");
 
     emailjs
       .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_ADVERTISER,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_ADVERTISER,
         {
           name: formData.name,
           company: formData.company,
@@ -36,10 +38,12 @@ export default function AdvertiserForm() {
           email: formData.email,
           time: new Date().toLocaleString(),
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         setStatus("Success! Your advertisement request has been sent.");
+
+        // Reset form
         setFormData({
           name: "",
           company: "",
@@ -51,7 +55,8 @@ export default function AdvertiserForm() {
 
         setTimeout(() => setStatus(""), 3000);
       })
-      .catch(() => {
+      .catch((err) => {
+        console.error(err);
         setStatus("Failed! Something went wrong.");
       });
   };
@@ -60,6 +65,7 @@ export default function AdvertiserForm() {
     <form className="space-y-4" onSubmit={handleSubmit}>
       <h2 className="text-2xl font-bold">Advertise With Us</h2>
 
+      {/* Status Message */}
       {status && (
         <p
           className="text-sm text-center"
