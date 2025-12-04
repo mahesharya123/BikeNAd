@@ -23,8 +23,8 @@ export default function RiderForm() {
 
     emailjs
       .send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_RIDER,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_RIDER,
         {
           name: formData.name,
           phone: formData.phone,
@@ -32,7 +32,7 @@ export default function RiderForm() {
           plan: formData.plan,
           time: new Date().toLocaleString(),
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         setStatus("Successfully Sent!");
@@ -56,7 +56,10 @@ export default function RiderForm() {
       <h2 className="text-2xl font-bold">Ride With Us</h2>
 
       {status && (
-        <p className="text-sm text-center" style={{ color: "green" }}>
+        <p
+          className="text-sm text-center"
+          style={{ color: status.includes("Success") ? "green" : "red" }}
+        >
           {status}
         </p>
       )}
