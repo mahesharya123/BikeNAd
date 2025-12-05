@@ -38,15 +38,15 @@ export default function Footer() {
         <div>
           <h3 className="text-xl font-semibold mb-4 text-accent">Follow Us</h3>
           <div className="flex items-center gap-4">
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.instagram.com/mahesharya_" target="_blank" rel="noopener noreferrer"
                className="bg-white text-pink-500 p-3 rounded-full hover:scale-110 transition transform shadow-md">
               <FaInstagram size={24} />
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/mahesh-arya-b5b9a31b6/" target="_blank" rel="noopener noreferrer"
                className="bg-white text-blue-700 p-3 rounded-full hover:scale-110 transition transform shadow-md">
               <FaLinkedin size={24} />
             </a>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/7389657445" target="_blank" rel="noopener noreferrer"
                className="bg-white text-green-500 p-3 rounded-full hover:scale-110 transition transform shadow-md">
               <FaWhatsapp size={24} />
             </a>
