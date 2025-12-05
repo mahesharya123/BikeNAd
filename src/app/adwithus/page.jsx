@@ -30,7 +30,8 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, []);
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+  <div className="flex flex-col min-h-screen bg-gray-50 overflow-x-hidden">
+
       {/* Navbar */}
       <Navbar />
 
@@ -39,14 +40,15 @@ useEffect(() => {
       {/* --------------------------- */}
       <section className="w-full h-[350px] md:h-[500px] relative overflow-hidden mb-10">
         {carouselImages.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`Slide ${index + 1}`}
-            className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          />
+         <img
+  key={index}
+  src={img}
+  alt={`Slide ${index + 1}`}
+  className={`absolute w-full h-full object-cover transition-opacity duration-1000 ${
+    index === currentSlide ? "opacity-100" : "opacity-0"
+  }`}
+/>
+
         ))}
 
         <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
@@ -105,9 +107,12 @@ useEffect(() => {
       {/* --------------------------- */}
       {/* OUR CLIENTS */}
       {/* --------------------------- */}
-      <section className="max-w-6xl mx-auto px-4 mt-10 mb-20 ">
-        <Clients />
-      </section>
+    <section className="w-full max-w-6xl mx-auto px-4 mt-10 mb-20 border border-gray-300 rounded-xl py-8">
+  <Clients />
+</section>
+
+
+
 
       {/* Footer */}
       <footer className="mt-auto">

@@ -34,8 +34,8 @@ export default function Navbar() {
         <div className="md:hidden bg-black font-sora px-6 py-4 flex flex-col gap-4 text-white">
           <Link href="/">Home</Link>
           <Link href="/adwithus">ADwithUS</Link>
-          <Link href="#video">Rentals</Link>
-          <Link href="#contact">Contact</Link>
+          <Link href="/ridewithus">Rentals</Link>
+          <Link href="/contact">Contact</Link>
         </div>
       )}
     </nav>
