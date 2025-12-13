@@ -31,6 +31,13 @@ export default function Footer() {
             <li>
               <a href="/ridewithus" className="hover:text-blue-500 transition duration-300">Rentals</a>
             </li>
+       
+           <li>
+              <a href="/privacy-policy" className="hover:text-blue-500 transition duration-300">Privacy Policy</a>
+            </li>
+             <li>
+              <a href="/termsandcondition" className="hover:text-blue-500 transition duration-300">Terms & Condition</a>
+            </li>
           </ul>
         </div>
 

@@ -19,7 +19,7 @@ export default function About() {
       {/* HERO SECTION */}
       <section className="w-full h-[300px] md:h-[400px] relative overflow-hidden mb-10">
         <img
-          src="/images/banner.gif"
+          src="/images/banner.jpg"
           alt="About Banner"
           className="w-full h-full object-cover"
         />
